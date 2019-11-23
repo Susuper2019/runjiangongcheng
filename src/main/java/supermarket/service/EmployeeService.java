@@ -10,5 +10,5 @@ import main.java.supermarket.bean.Employee;
  */
 public interface EmployeeService {
     //使用spring 配置
-    public boolean login(Integer id,String password);
+    public Employee login(Integer id);
 }

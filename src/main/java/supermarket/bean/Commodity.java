@@ -1,6 +1,5 @@
 package main.java.supermarket.bean;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 /**
  * @author Susuper

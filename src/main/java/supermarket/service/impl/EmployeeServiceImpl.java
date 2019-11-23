@@ -17,11 +17,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     public EmployeeDao employeeDao;
     @Override
-    public boolean login(Integer id, String password) {
+    public Employee login(Integer id) {
         Employee employee = employeeDao.selectLogin(id);
-        if(employee.getE_password().equals(password)){
-            return true;
-        }
-        return false;
+//        if(employee!=null && employee.getE_password().equals(password)){
+//            return true;
+//        }
+//        return false;
+        return employee;
     }
 }
