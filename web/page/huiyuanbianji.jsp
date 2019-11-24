@@ -786,7 +786,7 @@
                         <div class="tab-content">
 
                             <!--表单内容-->
-                            <form action="<%=basePath%>/updateMember" method="post">
+                            <form action="<%=basePath%>/Member/updateMember" method="post">
                             <div class="tab-pane active" id="tab-form">
                                 <div class="row data-type">
                                     <!--

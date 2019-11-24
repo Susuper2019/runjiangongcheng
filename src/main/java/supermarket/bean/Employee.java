@@ -9,7 +9,7 @@ package main.java.supermarket.bean;
 public class Employee {
     private Integer e_id;    //员工编号
     private String e_job;       //岗位
-    private String e_money;   //工资
+    private Integer e_money;   //工资
     private String e_name;  //员工名称
     private String e_password;  //账户密码
 
@@ -48,11 +48,11 @@ public class Employee {
         this.e_job = e_job;
     }
 
-    public String getE_money() {
+    public Integer getE_money() {
         return e_money;
     }
 
-    public void setE_money(String e_money) {
+    public void setE_money(Integer e_money) {
         this.e_money = e_money;
     }
 

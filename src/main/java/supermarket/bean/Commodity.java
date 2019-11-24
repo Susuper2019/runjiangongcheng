@@ -20,7 +20,7 @@ public class Commodity {
 
     @Override
     public String toString() {
-        return "Commodity{" +
+        return "CommodityDao{" +
                 "c_id=" + c_id +
                 ", c_eid=" + c_eid +
                 ", c_name='" + c_name + '\'' +

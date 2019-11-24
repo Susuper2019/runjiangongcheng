@@ -1,3 +1,10 @@
+<%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+%>
 <!DOCTYPE html>
 <html>
 
@@ -14,28 +21,28 @@
     <meta name="keywords" content="AdminLTE2定制版">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../plugins/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
-    <link rel="stylesheet" href="../plugins/morris/morris.css">
-    <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
-    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
-    <link rel="stylesheet" href="../plugins/treeTable/jquery.treetable.css">
-    <link rel="stylesheet" href="../plugins/treeTable/jquery.treetable.theme.default.css">
-    <link rel="stylesheet" href="../plugins/select2/select2.css">
-    <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
-    <link rel="stylesheet" href="../plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.css">
-    <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.skinNice.css">
-    <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
-    <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/morris/morris.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/treeTable/jquery.treetable.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/treeTable/jquery.treetable.theme.default.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/select2/select2.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/css/style.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/ionslider/ion.rangeSlider.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/ionslider/ion.rangeSlider.skinNice.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap-slider/slider.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
 </head>
 
 <body class="hold-transition skin-purple sidebar-mini">
@@ -334,7 +341,7 @@
                             </li>
 							
 							  <li id="admin-login">
-                                <a href="yuangongjiemian.html">
+                                <a href="yuangongjiemian.jsp">
                             <i class="fa fa-circle-o"></i> 员工信息 </a>
                             </li>
 							
@@ -441,57 +448,46 @@
                                         <th class="sorting_desc">员工姓名</th>
                                         <th class="sorting_asc sorting_asc_disabled">员工岗位</th>
                                         <th class="sorting_desc sorting_desc_disabled">员工薪资</th>
-                                        <th class="sorting">上班时间</th>
+                                        <%--<th class="sorting">上班时间</th>--%>
                                         <th class="text-center sorting">备注</th>                            
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <tr>
-                                        <td><input name="ids" type="checkbox"></td>
-                                        <td>1000</td>
-                                        <td>王楠
-                                        </td>
-                                        <td>总经理</td>
-                                        <td>9800</td>
-                                        <td>每天8.00-19.00</td>
-                                        <td class="text-center">于今天2019.11.17请假</td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn bg-olive btn-xs">详情</button>
-                                            <button type="button" class="btn bg-olive btn-xs">编辑</button>
-                                            <button type="button" class="btn bg-olive btn-xs">删除</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="ids" type="checkbox"></td>
-                                        <td>1001</td>
-                                        <td>小九九
-                                        </td>
-                                        <td>收银员</td>
-                                        <td>4500</td>
-                                        <td>周一到周五8.00-19.00</td>
-                                        <td class="text-center">无</td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn bg-olive btn-xs">订单</button>
-                                            <button type="button" class="btn bg-olive btn-xs">详情</button>
-                                            <button type="button" class="btn bg-olive btn-xs">编辑</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="ids" type="checkbox"></td>
-                                        <td>2001</td>
-                                        <td>小三三
-                                        </td>
-                                        <td>清洁员</td>
-                                        <td>2700</td>
-                                        <td>周一、三、五8.00-19.00</td>
-                                        <td class="text-center">无</td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn bg-olive btn-xs">订单</button>
-                                            <button type="button" class="btn bg-olive btn-xs">详情</button>
-                                            <button type="button" class="btn bg-olive btn-xs">编辑</button>
-                                        </td>
-                                    </tr>
+                                    <c:forEach items="${employeeList}" var="employeeList">
+                                        <tr>
+                                            <td><input name="ids" type="checkbox"></td>
+                                            <td>${employeeList.e_id}</td>
+                                            <td>${employeeList.e_name}</td>
+                                            <td>${employeeList.e_job}</td>
+                                            <td>${employeeList.e_money}</td>
+                                            <%--<td>${employeeList.e_id}</td>--%>
+                                            <%--<td class="text-center">于今天2019.11.17请假</td>--%>
+                                            <td class="text-center">
+                                                <%--<button type="button" class="btn bg-olive btn-xs">详情</button>--%>
+                                                <button type="button" class="btn bg-olive btn-xs">编辑</button>
+                                                <button type="button" class="btn bg-olive btn-xs"  onclick="return trash(${employeeList.e_id})">删除</button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                <%--<c:forEach items="${members}" var="ms">--%>
+                                    <%--<tr>--%>
+                                        <%--<td><input name="ids" type="checkbox"></td>--%>
+                                        <%--<td>${ms.m_id}</td>--%>
+                                        <%--<td>${ms.m_point}</td>--%>
+
+
+                                        <%--<td class="text-center">--%>
+                                            <%--<button type="submit" class="btn bg-olive btn-xs" id="delete"  onclick="return trash(${ms.m_id})">删除</button>--%>
+                                                <%--&lt;%&ndash;data-toggle="modal" data-target="#trashModal"&ndash;%&gt;--%>
+
+
+
+                                            <%--<a href="<%=basePath%>/page/huiyuanbianji.jsp"><button type="button" class="btn bg-olive btn-xs">编辑</button></a>--%>
+                                        <%--</td></tr>--%>
+                                <%--</c:forEach>--%>
+
+
                                    
 
                                 </tbody>
@@ -573,47 +569,62 @@
     <script>
         $.widget.bridge('uibutton', $.ui.button);
     </script>
-    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/raphael/raphael-min.js"></script>
-    <script src="../plugins/morris/morris.min.js"></script>
-    <script src="../plugins/sparkline/jquery.sparkline.min.js"></script>
-    <script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../plugins/knob/jquery.knob.js"></script>
-    <script src="../plugins/daterangepicker/moment.min.js"></script>
-    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
-    <script src="../plugins/daterangepicker/daterangepicker.zh-CN.js"></script>
-    <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
-    <script src="../plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
-    <script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <script src="../plugins/fastclick/fastclick.js"></script>
-    <script src="../plugins/iCheck/icheck.min.js"></script>
-    <script src="../plugins/adminLTE/js/app.min.js"></script>
-    <script src="../plugins/treeTable/jquery.treetable.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
-    <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-    <script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
-    <script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-    <script src="../plugins/bootstrap-markdown/locale/bootstrap-markdown.zh.js"></script>
-    <script src="../plugins/bootstrap-markdown/js/markdown.js"></script>
-    <script src="../plugins/bootstrap-markdown/js/to-markdown.js"></script>
-    <script src="../plugins/ckeditor/ckeditor.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="../plugins/chartjs/Chart.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.resize.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.pie.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.categories.min.js"></script>
-    <script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
-    <script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
-    <script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-    <script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=basePath%>/plugins/raphael/raphael-min.js"></script>
+    <script src="<%=basePath%>/plugins/morris/morris.min.js"></script>
+    <script src="<%=basePath%>/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="<%=basePath%>/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="<%=basePath%>/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<%=basePath%>/plugins/knob/jquery.knob.js"></script>
+    <script src="<%=basePath%>/plugins/daterangepicker/moment.min.js"></script>
+    <script src="<%=basePath%>/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="<%=basePath%>/plugins/daterangepicker/daterangepicker.zh-CN.js"></script>
+    <script src="<%=basePath%>/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="<%=basePath%>/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="<%=basePath%>/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="<%=basePath%>/plugins/fastclick/fastclick.js"></script>
+    <script src="<%=basePath%>/plugins/iCheck/icheck.min.js"></script>
+    <script src="<%=basePath%>/plugins/adminLTE/js/app.min.js"></script>
+    <script src="<%=basePath%>/plugins/treeTable/jquery.treetable.js"></script>
+    <script src="<%=basePath%>/plugins/select2/select2.full.min.js"></script>
+    <script src="<%=basePath%>/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-markdown/locale/bootstrap-markdown.zh.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-markdown/js/markdown.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-markdown/js/to-markdown.js"></script>
+    <script src="<%=basePath%>/plugins/ckeditor/ckeditor.js"></script>
+    <script src="<%=basePath%>/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="<%=basePath%>/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="<%=basePath%>/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="<%=basePath%>/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<%=basePath%>/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="<%=basePath%>/plugins/chartjs/Chart.min.js"></script>
+    <script src="<%=basePath%>/plugins/flot/jquery.flot.min.js"></script>
+    <script src="<%=basePath%>/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script src="<%=basePath%>/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script src="<%=basePath%>/plugins/flot/jquery.flot.categories.min.js"></script>
+    <script src="<%=basePath%>/plugins/ionslider/ion.rangeSlider.min.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
     <script>
+
+
+        // 删除信息的方法
+        function trash(id) {
+            $.ajax({
+                url: '<%=basePath%>/Employee/deleteEmplyoee?id='+id,
+                success: function (data) {
+                    // $("body").html(data);
+                },
+                error: function () {
+                    alert("错误");
+                }
+            })
+        }
+
         $(document).ready(function() {
             // 选择框
             $(".select2").select2();

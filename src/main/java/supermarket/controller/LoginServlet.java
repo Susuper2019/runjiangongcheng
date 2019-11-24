@@ -33,7 +33,7 @@ public class LoginServlet   {
 //    public String loginToPage(HttpServletRequest request, HttpServletResponse response){
     public ModelAndView loginToPage(@RequestParam("userid") String ids, @RequestParam("password") String pwd, HttpSession session)  {
         int id = Integer.parseInt(ids);
-        Employee employee = employeeService.login(id);
+        Employee employee = employeeService.selectLogin(id);
         ModelAndView modelAndView = null;
         if( employee!=null && employee.getE_password().equals(pwd)){
             session.setAttribute("USER_SESSION",employee);

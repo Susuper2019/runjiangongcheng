@@ -20,6 +20,7 @@ import java.util.List;
  * @date 2019/11/23 9:28
  * @description
  */
+@RequestMapping(value = "/Member")
 @Controller
 public class MemberServlet {
     @Autowired
@@ -41,13 +42,23 @@ public class MemberServlet {
     }
 
     @RequestMapping(value = "/deleteMember")
-    public String DeleteMember(Model model,@RequestParam(value = "id",required = false) String id){
-        System.out.println("test");
-        if(memberService.deleteMember(Integer.parseInt(id))){
-            model.addAttribute("msg","success");
-        }
+    public String delete(Model model,@RequestParam Integer id) {
+//        System.out.println("test");
+        memberService.deleteMember(id);
+        model.addAttribute("message", "删除客户信息成功");
         return "forward:showHuiyuanMessage";
     }
+
+
+//    @RequestMapping(value = "/deleteMember")
+//    public String DeleteMember(@RequestParam(value = "id",required = false) String id){
+//        System.out.println("test");
+////        if(){
+//////            model.addAttribute("msg","success");
+////        }
+//        memberService.deleteMember(Integer.parseInt(id));
+//        return "forward:showHuiyuanMessage";
+//    }
 
     @RequestMapping(value = "/updateMember")
     public String UpdateMember(@RequestParam(value = "huiyuanId",required=false) Integer id,@RequestParam(value = "huiyuanjifen",required=false) Integer point,Model model){

@@ -1,11 +1,14 @@
 package test;
 
+import main.java.supermarket.bean.Employee;
 import main.java.supermarket.bean.Member;
 import main.java.supermarket.service.EmployeeService;
 import main.java.supermarket.service.MemberService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.List;
 
 /**
  * @author Susuper
@@ -14,12 +17,59 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @description
  */
 public class EmployeeServiceTest {
+    //以下是对 雇员表的做的测试
     @Test
     public void testLogin(){
         ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
         EmployeeService employeeService = (EmployeeService) ac.getBean("employeeService");
-//        System.out.println(employeeService.login(2001,"123"));
+        System.out.println(employeeService.selectLogin(2001));
     }
+
+
+
+    @Test
+    public void testinsertEmployee(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
+        EmployeeService employeeService = (EmployeeService) ac.getBean("employeeService");
+
+        Employee employee = new Employee();
+        employee.setE_money(456);
+        employee.setE_job("test");
+        employee.setE_password("aa");
+        employee.setE_name("aa");
+
+        System.out.println(employeeService.insertEmployee(employee));
+    }
+
+    @Test
+    public void testdeleteEmplyoee(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
+        EmployeeService employeeService = (EmployeeService) ac.getBean("employeeService");
+        System.out.println(employeeService.deleteEmplyoee(2005));
+    }
+
+    @Test
+    public void testupdateEmplyoee(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
+        EmployeeService employeeService = (EmployeeService) ac.getBean("employeeService");
+
+        Employee employee = employeeService.selectLogin(2001);
+        employee.setE_money(9999);
+        System.out.println(employeeService.updateEmplyoee(employee));
+    }
+
+    @Test
+    public void testfindAll(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
+        EmployeeService employeeService = (EmployeeService) ac.getBean("employeeService");
+        List<Employee> employees = employeeService.findAll();
+        for(Employee employee:employees){
+            System.out.println(employee);
+        }
+    }
+
+
+
 
 
     /**

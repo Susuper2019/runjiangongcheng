@@ -274,7 +274,7 @@
                             </li>
 							
 							 <li id="admin-login">
-                                <a href="yuangongjiemian.html">
+                                <a href="yuangongjiemian.jsp">
                             <i class="fa fa-circle-o"></i> 员工信息 </a>
                             </li>
 							
@@ -385,17 +385,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${members}" var="ms">
-                                    <tr><td><input name="ids" type="checkbox"></td>
-                                    <td>${ms.m_id}</td>
-                                    <td>${ms.m_point}</td>
+                                <%--<from>--%>
+                                    <c:forEach items="${members}" var="ms">
+                                        <tr>
+                                            <td><input name="ids" type="checkbox"></td>
+                                            <td>${ms.m_id}</td>
+                                            <td>${ms.m_point}</td>
 
 
-                                    <td class="text-center">
-                                        <button type="button" class="btn bg-olive btn-xs" id="delete" onclick="return deleteThis(${ms.m_id})">删除</button>
-                                    <a href="<%=basePath%>/page/huiyuanbianji.jsp"><button type="button" class="btn bg-olive btn-xs">编辑</button></a></td></tr>
-                                </c:forEach>
+                                            <td class="text-center">
+                                            <button type="submit" class="btn bg-olive btn-xs" id="delete"  onclick="return trash(${ms.m_id})">删除</button>
+                                                    <%--data-toggle="modal" data-target="#trashModal"--%>
 
+
+
+                                             <a href="<%=basePath%>/page/huiyuanbianji.jsp"><button type="button" class="btn bg-olive btn-xs">编辑</button></a>
+                                        </td></tr>
+                                    </c:forEach>
+                                <%--</from>--%>
 
                                 </tbody>
 
@@ -467,6 +474,28 @@
 
     </div>
 
+    <!-- 删除的模态框 -->
+    <%--<div class="modal fade" id="trashModal">--%>
+        <%--<div class="modal-dialog">--%>
+            <%--<div class="modal-content">--%>
+                <%--<!-- 模糊框头部 -->--%>
+                <%--<div class="modal-header">--%>
+                    <%--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;--%>
+                    <%--</button>--%>
+                    <%--<h4 class="modal-title">警告！</h4>--%>
+                <%--</div>--%>
+                <%--<!-- 模糊框主体 -->--%>
+                <%--<div class="modal-body">--%>
+                    <%--<strong>你确定要删除吗？</strong>--%>
+                <%--</div>--%>
+                <%--<!-- 模糊框底部 -->--%>
+                <%--<div class="modal-footer">--%>
+                    <%--<button type="button" class="delSure btn btn-info" data-dismiss="modal">确定</button>--%>
+                    <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
 
     <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
@@ -528,24 +557,35 @@
 
         });
 
-        //删除某一列
-        function deleteThis(id) {
-            if (!id) {
-                alert("error");
-            } else {
-                // alert(id);
-                // 先去查询数据
-                $.ajax({
-                    url: '<%=basePath%>/deleteMember'+id,
-                    success: function (data) {
-                       alert("test");
-                    },
-                    error: function () {
-                        alert("错误");
-                    }
-                });
-            }
+        <%--$(function(){--%>
+        <%--$.ajax({--%>
+        <%--url:'<%=basePath%>/showHuiyuanMessage',--%>
+        <%--contentType: 'application/json;charset=UTF-8',--%>
+        <%--success:function(data){--%>
+        <%--alert("删除成功");--%>
+        <%--},--%>
+        <%--error: function () {--%>
+        <%--alert("错误");--%>
+        <%--}--%>
+
+        <%--})--%>
+        <%--});--%>
+
+        // 删除信息的方法
+        function trash(id) {
+            $.ajax({
+                url: '<%=basePath%>/Member/deleteMember?id='+id,
+                success: function (data) {
+                    // $("body").html(data);
+                    alert("删除成功");
+                    window.location.reload()  //刷新页面
+                },
+                error: function () {
+                    alert("错误");
+                }
+            })
         }
+
 
         // 设置激活菜单
         function setSidebarActive(tagUri) {
@@ -585,19 +625,7 @@
 
 
 
-        <%--$(function(){--%>
-                <%--$.ajax({--%>
-                    <%--url:'<%=basePath%>/showHuiyuanMessage',--%>
-                    <%--contentType: 'application/json;charset=UTF-8',--%>
-                    <%--success:function(data){--%>
-                       <%--alert("删除成功");--%>
-                    <%--},--%>
-                    <%--error: function () {--%>
-                        <%--alert("错误");--%>
-                    <%--}--%>
 
-                <%--})--%>
-            <%--});--%>
 
     </script>
 </body>
