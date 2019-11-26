@@ -384,7 +384,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
                             </li>
 							
 							 <li id="all-order-manage-list.html">
-                                <a href="qingdan.html">
+                                <a href="orderMessage.jsp">
                             <i class="fa fa-circle-o"></i> 清单
                         </a>
                             </li>

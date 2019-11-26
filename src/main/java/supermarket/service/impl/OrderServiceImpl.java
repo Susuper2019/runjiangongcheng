@@ -6,6 +6,9 @@ import main.java.supermarket.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,5 +34,29 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public Order selectOrderById(Integer s_id) {
         return orderDao.selectOrderById(s_id);
+    }
+    @Override
+    public  List<Order> seleOrderByMoney(Double money){
+        return orderDao.seleOrderByMoney(money);
+    }
+
+    @Override
+    public List<Order> selectOrderByMonth(String month){
+        List<Order> orders = orderDao.findAll();
+        List<Order> orderList = new ArrayList<>();
+        for(Order order:orders){
+            Date date = order.getS_date();
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            int monthDate = calendar.get(Calendar.MONTH);  //Calendar.MONTH是从0开始的
+            monthDate+=1;
+//            System.out.println(monthDate);
+            if(monthDate == Integer.parseInt(month)){
+//                System.out.println(order);
+                orderList.add(order);
+            }
+        }
+
+        return orderList;
     }
 }

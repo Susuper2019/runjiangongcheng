@@ -16,6 +16,16 @@ public class Order {
     private Date s_date;        //销售日期
     private Double s_money;  //入账金额
 
+    private String date;  //临时用来转换用的
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -25,6 +35,7 @@ public class Order {
                 ", s_number=" + s_number +
                 ", s_date=" + s_date +
                 ", s_money=" + s_money +
+                ", date='" + date + '\'' +
                 '}';
     }
 

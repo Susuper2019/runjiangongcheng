@@ -25,82 +25,10 @@
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <!-- Font Awesome -->
-    <!-- Ionicons -->
-    <!-- iCheck -->
-    <!-- Morris chart -->
-    <!-- jvectormap -->
-    <!-- Date Picker -->
-    <!-- Daterange picker -->
-    <!-- Bootstrap time Picker -->
-    <!--<link rel="stylesheet" href="../../../plugins/timepicker/bootstrap-timepicker.min.css">-->
-    <!-- bootstrap wysihtml5 - text editor -->
-    <!--数据表格-->
-    <!-- 表格树 -->
-    <!-- select2 -->
-    <!-- Bootstrap Color Picker -->
-    <!-- bootstrap wysihtml5 - text editor -->
-    <!--bootstrap-markdown-->
-    <!-- Theme style -->
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-    <!-- Ion Slider -->
-    <!-- ion slider Nice -->
-    <!-- bootstrap slider -->
-    <!-- bootstrap-datetimepicker -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
 
-
-
-
-
-
-
-
-    <!-- jQuery 2.2.3 -->
-    <!-- jQuery UI 1.11.4 -->
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <!-- Bootstrap 3.3.6 -->
-    <!-- Morris.js charts -->
-    <!-- Sparkline -->
-    <!-- jvectormap -->
-    <!-- jQuery Knob Chart -->
-    <!-- daterangepicker -->
-    <!-- datepicker -->
-    <!-- Bootstrap WYSIHTML5 -->
-    <!-- Slimscroll -->
-    <!-- FastClick -->
-    <!-- iCheck -->
-    <!-- AdminLTE App -->
-    <!-- 表格树 -->
-    <!-- select2 -->
-    <!-- bootstrap color picker -->
-    <!-- bootstrap time picker -->
-    <!--<script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>-->
-    <!-- Bootstrap WYSIHTML5 -->
-    <!--bootstrap-markdown-->
-    <!-- CK Editor -->
-    <!-- InputMask -->
-    <!-- DataTables -->
-    <!-- ChartJS 1.0.1 -->
-    <!-- FLOT CHARTS -->
-    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <!-- jQuery Knob -->
-    <!-- Sparkline -->
-    <!-- Morris.js charts -->
-    <!-- Ion Slider -->
-    <!-- Bootstrap slider -->
-    <!-- bootstrap-datetimepicker -->
-    <!-- 页面meta /-->
 
     <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>/plugins/font-awesome/css/font-awesome.min.css">
@@ -284,7 +212,7 @@
                             </li>
 							
 							 <li id="all-order-manage-list.html">
-                                <a href="qingdan.html">
+                                <a href="orderMessage.jsp">
                             <i class="fa fa-circle-o"></i> 清单
                         </a>
                             </li>
@@ -446,28 +374,6 @@
 
     </div>
 
-    <!-- 删除的模态框 -->
-    <%--<div class="modal fade" id="trashModal">--%>
-        <%--<div class="modal-dialog">--%>
-            <%--<div class="modal-content">--%>
-                <%--<!-- 模糊框头部 -->--%>
-                <%--<div class="modal-header">--%>
-                    <%--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;--%>
-                    <%--</button>--%>
-                    <%--<h4 class="modal-title">警告！</h4>--%>
-                <%--</div>--%>
-                <%--<!-- 模糊框主体 -->--%>
-                <%--<div class="modal-body">--%>
-                    <%--<strong>你确定要删除吗？</strong>--%>
-                <%--</div>--%>
-                <%--<!-- 模糊框底部 -->--%>
-                <%--<div class="modal-footer">--%>
-                    <%--<button type="button" class="delSure btn btn-info" data-dismiss="modal">确定</button>--%>
-                    <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
 
     <script src="<%=basePath%>/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="<%=basePath%>/plugins/jQueryUI/jquery-ui.min.js"></script>

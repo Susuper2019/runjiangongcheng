@@ -8,6 +8,9 @@ import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 /**
@@ -36,6 +39,7 @@ public class OrderServiceImplTest {
         Order order = orderService.selectOrderById(1101);
         order.setS_eid(2002);
         order.setS_money(9999.0);
+        order.setS_date(new Timestamp(new Date().getTime()));
         orderService.insertOrder(order);
 //        System.out.println(orderService.);
     }
@@ -43,5 +47,14 @@ public class OrderServiceImplTest {
     @Test
     public void selectOrderById() {
         System.out.println(orderService.selectOrderById(1101));
+    }
+    @Test
+    public  void testseleOrderByMoney(){
+        System.out.println(orderService.seleOrderByMoney(50.0));
+    }
+
+    @Test
+    public void testselectOrderByMonth(){
+        System.out.println(orderService.selectOrderByMonth("10"));
     }
 }

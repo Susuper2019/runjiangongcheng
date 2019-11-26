@@ -4,6 +4,7 @@ import main.java.supermarket.bean.Order;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.aspectj.weaver.ast.Or;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public interface OrderDao {
     Order selectOrderById(Integer s_id);
 
     //按照钱数查询大于的
-
+    @Select("select * from orders where s_money>#{money}")
+    List<Order> seleOrderByMoney(Double money);
     //按照月份打印order表 可以提供的参数 一个月份
 }

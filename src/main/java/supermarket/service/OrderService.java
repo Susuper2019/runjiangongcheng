@@ -20,4 +20,8 @@ public interface OrderService {
 
 
     Order selectOrderById(Integer s_id);
+
+    List<Order> seleOrderByMoney(Double money);
+
+    List<Order> selectOrderByMonth(String month);
 }
