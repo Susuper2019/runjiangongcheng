@@ -2,8 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
 %>
 <!DOCTYPE html>
 <html>
@@ -16,10 +16,91 @@
 
 
 
-    <title>员工信息管理</title>
+    <title>编辑</title>
     <meta name="description" content="AdminLTE2定制版">
     <meta name="keywords" content="AdminLTE2定制版">
+
+
+
+
+    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <!-- Font Awesome -->
+    <!-- Ionicons -->
+    <!-- iCheck -->
+    <!-- Morris chart -->
+    <!-- jvectormap -->
+    <!-- Date Picker -->
+    <!-- Daterange picker -->
+    <!-- Bootstrap time Picker -->
+    <!--<link rel="stylesheet" href="../../../plugins/timepicker/bootstrap-timepicker.min.css">-->
+    <!-- bootstrap wysihtml5 - text editor -->
+    <!--数据表格-->
+    <!-- 表格树 -->
+    <!-- select2 -->
+    <!-- Bootstrap Color Picker -->
+    <!-- bootstrap wysihtml5 - text editor -->
+    <!--bootstrap-markdown-->
+    <!-- Theme style -->
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <!-- Ion Slider -->
+    <!-- ion slider Nice -->
+    <!-- bootstrap slider -->
+    <!-- bootstrap-datetimepicker -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+
+
+
+
+
+    <!-- jQuery 2.2.3 -->
+    <!-- jQuery UI 1.11.4 -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- Bootstrap 3.3.6 -->
+    <!-- Morris.js charts -->
+    <!-- Sparkline -->
+    <!-- jvectormap -->
+    <!-- jQuery Knob Chart -->
+    <!-- daterangepicker -->
+    <!-- datepicker -->
+    <!-- Bootstrap WYSIHTML5 -->
+    <!-- Slimscroll -->
+    <!-- FastClick -->
+    <!-- iCheck -->
+    <!-- AdminLTE App -->
+    <!-- 表格树 -->
+    <!-- select2 -->
+    <!-- bootstrap color picker -->
+    <!-- bootstrap time picker -->
+    <!--<script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>-->
+    <!-- Bootstrap WYSIHTML5 -->
+    <!--bootstrap-markdown-->
+    <!-- CK Editor -->
+    <!-- InputMask -->
+    <!-- DataTables -->
+    <!-- ChartJS 1.0.1 -->
+    <!-- FLOT CHARTS -->
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+    <!-- jQuery Knob -->
+    <!-- Sparkline -->
+    <!-- Morris.js charts -->
+    <!-- Ion Slider -->
+    <!-- Bootstrap slider -->
+    <!-- bootstrap-datetimepicker -->
+    <!-- 页面meta /-->
 
     <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>/plugins/font-awesome/css/font-awesome.min.css">
@@ -56,9 +137,9 @@
             <!-- Logo -->
             <a href="all-admin-index.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>超市</b></span>
+                <span class="logo-mini"><b>数据</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>超市</b>后台管理</span>
+                <span class="logo-lg"><b>数据</b>后台管理</span>
             </a>
 
 
@@ -285,7 +366,20 @@
                                         <small>最后登录 11:20AM</small>
                                     </p>
                                 </li>
-                                
+                                <!-- Menu Body 
+                        <li class="user-body">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Followers</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Sales</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Friends</a>
+                                </div>
+                            </div>
+                        </li>-->
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -314,91 +408,30 @@
                         <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Mr.chen</p>
+                        <p>张猿猿</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
                     </div>
                 </div>
 
-                <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu">
-                    <li class="header">菜单</li>
 
-                    <li id="admin-index"><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> <span>首页</span></a></li>
-
-                    <!-- 菜单 -->
-
-					<li class="treeview">
-                        <a href="#">
-                    <i class="fa fa-folder"></i> <span>库存管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                         <ul class="treeview-menu">
-                          <li id="admin-login">
-                                <a href="ProductManage.jsp">
-                            <i class="fa fa-circle-o"></i> 库存数据信息列表 </a>
-                            </li>
-							
-							  <li id="admin-login">
-                                <a href="yuangongjiemian.jsp">
-                            <i class="fa fa-circle-o"></i> 员工信息 </a>
-                            </li>
-							
-							<li id="admin-login">
-                                <a href="huiyuanxinxi.jsp">
-                            <i class="fa fa-circle-o"></i> 会员信息 </a>
-                            </li>
-							
-							 <li id="all-order-manage-list.html">
-                                <a href="qingdan.html">
-                            <i class="fa fa-circle-o"></i> 清单
-                        </a>
-                            </li>
-                      <li id="admin-invoice">
-                                <a href="fapiao.html">
-                            <i class="fa fa-circle-o"></i> 发票
-                        </a>
-                            </li>
-
-                            <li id="admin-invoice-print">
-                                <a href="all-admin-invoice-print.html">
-                            <i class="fa fa-circle-o"></i> 发票打印
-                        </a>
-                            </li>
-							
-							
-							
-							
-                        </ul> 
-						
-                    </li>
-                    <!-- 菜单 /-->
-
-                    <!--<li id="admin-documentation"><a href="documentation.html" target="_blank"><i class="fa fa-book"></i> <span>AdminLTE汉化文档</span></a></li>-->
-
-                </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
         <!-- 导航侧栏 /-->
 
         <!-- 内容区域 -->
-        <!-- @@master = admin-layout.html-->
-        <!-- @@block = content -->
-
         <div class="content-wrapper">
 
             <!-- 内容头部 -->
             <section class="content-header">
                 <h1>
                     员工信息
-                    <small>员工信息</small>
+                    <small>编辑信息</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                    <li><a href="#">员工信息</a></li>
-                    <li class="active">员工信息</li>
+                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+                    <li><a href="all-order-manage-list.html">员工信息</a></li>
+                    <li class="active">编辑信息</li>
                 </ol>
             </section>
             <!-- 内容头部 /-->
@@ -406,104 +439,75 @@
             <!-- 正文区域 -->
             <section class="content">
 
-                <!-- .box-body -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">列表</h3>
-                    </div>
+                <form method="post" name="formTest">
+                <!--订单信息-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">员工信息</div>
+                    <div class="row data-type">
 
-                    <div class="box-body">
-
-                        <!-- 数据表格 -->
-                        <div class="table-box">
-
-                            <!--工具栏-->
-                            <div class="pull-left">
-                                <div class="form-group form-inline">
-                                    <div class="btn-group">
-                                        <a href="<%=basePath%>/page/employeeedit.jsp"><button type="button" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</button></a>
-                                        <%--<button type="button" class="btn btn-default" title="删除"><i class="fa fa-trash-o"></i> 删除</button>--%>
-                                        <a href="<%=basePath%>/Employee/showEmloyeeServlet"><button type="button" class="btn btn-default" title="刷新"><i class="fa fa-refresh"></i> 刷新</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                                <form  name="formTest" method="get">
-                                <div class="box-tools pull-right">
-                                        <div class="has-feedback">
-
-                                            <input type="text" class="form-control input-sm" placeholder="输入员工编号来搜索" name="e_id" id="e_id"></input>
-                                            <%--<input type="submit" value="查询"/>--%>
-                                            <input type="submit" value="提交" onclick="select()">
-                                                <%--<span class="glyphicon glyphicon-search form-control-feedback" ></span>--%>
-                                            </input>
-
-                                        </div>
-                                </div>
-                                </form>
-                            <!--工具栏/-->
-
-                            <!--数据列表-->
-                            <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
-                                <thead>
-                                    <tr>
-                                        <th class="" style="padding-right:0px;">
-                                            <input id="selall" type="checkbox" class="icheckbox_square-blue">
-                                        </th>
-                                        <th class="sorting_asc">员工ID</th>
-                                        <th class="sorting_desc">员工姓名</th>
-                                        <th class="sorting_asc sorting_asc_disabled">员工岗位</th>
-                                        <th class="sorting_desc sorting_desc_disabled">员工薪资</th>
-                                        <%--<th class="sorting">上班时间</th>--%>
-                                        <th class="text-center sorting">备注</th>                            
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <c:forEach items="${employeeList}" var="employeeList">
-                                        <tr>
-                                            <td><input name="ids" type="checkbox"></td>
-                                            <td>${employeeList.e_id}</td>
-                                            <td>${employeeList.e_name}</td>
-                                            <td>${employeeList.e_job}</td>
-                                            <td>${employeeList.e_money}</td>
-                                            <td class="text-center">
-                                                <%--<button type="button" class="btn bg-olive btn-xs">详情</button>--%>
-                                                <a href="<%=basePath%>/page/employeeedit.jsp"><button type="button" class="btn bg-olive btn-xs">编辑</button></a>
-                                                <button type="button" class="btn bg-olive btn-xs"  onclick="return trash(${employeeList.e_id})">删除</button>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-
-                                </tbody>
-
-
-                            </table>
-
+                        <div class="col-md-2 title">员工ID</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="员工ID" value="" id="e_id">
                         </div>
-                        <!-- 数据表格 /-->
+
+                        <div class="col-md-2 title">员工姓名</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="员工姓名" value="" id="e_name">
+                        </div>
+						
+                        <div class="col-md-2 title">员工岗位</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="员工岗位" value="" id="e_job">
+                        </div>
+
+						 <div class="col-md-2 title">员工薪资</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="员工薪资" value="" id="e_money">
+                        </div>
+
+						 <div class="col-md-2 title">账号密码</div>
+                        <div class="col-md-4 data">
+                            <input type="password" class="form-control" placeholder="账号密码" value="" id="e_password">
+                        </div>
+						
+                        <div class="col-md-2 title">备注</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="备注" value="">
+                        </div>
+
                     </div>
-                    <!-- /.box-body -->
+                    <!--工具栏-->
+                    <div class="box-tools text-center">
+                        <button type="button" class="btn bg-maroon" onclick="update()">更新</button>
+                        <button type="button" class="btn bg-maroon" onclick="insert()">添加</button>
+                        <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                    </div>
+                    <!--工具栏/-->
                 </div>
+
+                </form>
+
+
             </section>
             <!-- 正文区域 /-->
+
         </div>
-		
-		 
-		
+        <!-- 内容区域 /-->
+
         <!-- 底部导航 -->
-       <footer class="main-footer">
+        <footer class="main-footer">
             <div class="pull-right hidden-xs">
                 <b>Version</b> 1.0.8
             </div>
-            <strong>Copyright &copy; 2019-2020 <a href="http://www.itcast.cn">超市后台管理系统</a>.</strong> Faighting！
+            <strong>Copyright &copy; 2014-2017 <a href="http://www.itcast.cn">研究院研发部</a>.</strong> All rights reserved.
         </footer>
         <!-- 底部导航 /-->
 
     </div>
 
 
-    <script src="<%=basePath%>/plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="<%=basePath%>/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
     </script>
@@ -548,30 +552,6 @@
     <script src="<%=basePath%>/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
     <script src="<%=basePath%>/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
     <script>
-
-        function select(){
-            alert("select");
-            var e_id = document.getElementById("e_id").value;
-            alert(e_id);
-            document.formTest.action="<%=basePath%>/Employee/showEmloyeeOne?e_id="+e_id;
-            document.formTest.submit();
-        }
-
-        // 删除信息的方法
-        function trash(id) {
-            $.ajax({
-                url: '<%=basePath%>/Employee/deleteEmplyoee?id='+id,
-                success: function () {
-                    // alert("删除成功");
-                    window.location.reload();  //刷新页面
-                },
-                error: function () {
-                    // alert("错误");
-                    window.location.reload();
-                }
-            })
-        }
-
         $(document).ready(function() {
             // 选择框
             $(".select2").select2();
@@ -592,27 +572,46 @@
             }
         }
 
+        function update(){
+            // alert("update");
+            var e_id = document.getElementById("e_id").value;
+            var e_job = document.getElementById("e_job").value;
+            var e_money = document.getElementById("e_money").value;
+            var e_name = document.getElementById("e_name").value;
+            var e_password = document.getElementById("e_password").value;
+            document.formTest.action="<%=basePath%>/Employee/updateEmployee?e_id="+e_id+"&e_job="+e_job+"&e_money="+e_money+"&e_name="+e_name+"&e_password="+e_password;
+            document.formTest.submit();
+        }
+
+        function insert(){
+            var e_id = document.getElementById("e_id").value;
+            var e_job = document.getElementById("e_job").value;
+            var e_money = document.getElementById("e_money").value;
+            var e_name = document.getElementById("e_name").value;
+            var e_password = document.getElementById("e_password").value;
+            document.formTest.action="<%=basePath%>/Employee/insertEmployee?e_id="+e_id+"&e_job="+e_job+"&e_money="+e_money+"&e_name="+e_name+"&e_password="+e_password;
+            document.formTest.submit();
+        }
 
         $(document).ready(function() {
+            $('#datepicker-a3').datepicker({
+                autoclose: true,
+                language: 'zh-CN'
+            });
+        });
 
+
+        $(document).ready(function() {
+            $('#datepicker-a6').datepicker({
+                autoclose: true,
+                language: 'zh-CN'
+            });
+        });
+
+
+        $(document).ready(function() {
             // 激活导航位置
-            setSidebarActive("admin-datalist");
-
-            // 列表按钮 
-            $("#dataList td input[type='checkbox']").iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                increaseArea: '20%'
-            });
-            // 全选操作 
-            $("#selall").click(function() {
-                var clicks = $(this).is(':checked');
-                if (!clicks) {
-                    $("#dataList td input[type='checkbox']").iCheck("uncheck");
-                } else {
-                    $("#dataList td input[type='checkbox']").iCheck("check");
-                }
-                $(this).data("clicks", !clicks);
-            });
+            setSidebarActive("order-manage");
         });
     </script>
 </body>

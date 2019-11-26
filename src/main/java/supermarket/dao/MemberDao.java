@@ -26,4 +26,10 @@ public interface MemberDao {
     boolean updateMember(Member member);
     @Insert("insert into member(m_id,m_point) values (#{m_id},#{m_point})")
     boolean insertMember(Member member);
+
+    @Select("select max(m_id) from member")
+    int selectMax();
+
+    @Select("select * from member where m_id=#{id}")
+    Member selectOne(Integer id);
 }

@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +13,11 @@
 
     <title>员工登录界面</title>
     
-   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../plugins/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
-    <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
+   <link rel="stylesheet" href="<%=basePath%>/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="<%=basePath%>/plugins/iCheck/square/blue.css">
 
 </head>
 <body class="hold-transition login-page" >
@@ -40,17 +45,12 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-4">
-                         <!--<div class="checkbox icheck"> -->
-                             <!--&lt;!&ndash; 错误：选择框，未显示&ndash;&gt;-->
-                            <!--<label><input type="checkbox"> 记住 下次自动登录</label>-->
-                        <!--</div>-->
                     </div>
  
                     <!-- /.col -->
                     <div class="col-xs-4">
                         <button type="submit" class="btn btn-primary btn-block btn-flat" id="login">登录</button>
                     </div>
-                    <!-- /.col -->
                 </div>
             </form>
 
@@ -59,22 +59,12 @@
                 <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-qq"></i> 腾讯QQ用户登录</a>
                 <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-weixin"></i> 微信用户登录</a>
             </div>
-            <!-- /.social-auth-links -->
-
-            <!--<a href="#">忘记密码</a><br>-->
-            <!-- <a href="all-admin-register.html" class="text-center">新用户注册</a> -->
-
         </div>
-        <!-- /.login-box-body -->
     </div>
-    <!-- /.login-box -->
 
-    <!-- jQuery 2.2.3 -->
-    <!-- Bootstrap 3.3.6 -->
-    <!-- iCheck -->
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/iCheck/icheck.min.js"></script>
+    <script src="<%=basePath%>/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<%=basePath%>/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=basePath%>/plugins/iCheck/icheck.min.js"></script>
     <script>
         $(function() {
             $('input').iCheck({
@@ -83,18 +73,7 @@
                 increaseArea: '20%' // optional
             });
 
-            // $("#login").click(function(){
-            //     $.ajax({
-            //         url:'loginServlet',
-            //         success:function(data){
-            //             var result = eval("(" + data + ")");   //此处需要这样获取到后端的json数据，虽然我也不知道为甚
-            //             alert("ok");
-            //
-            //
-            //         }
-            //
-            //     })
-            // });
+
         });
     </script>
 

@@ -819,13 +819,7 @@
                         <!--tab内容/-->
 
                     </div>
-                    <!--tab页/-->
 
-
-                    <!-- .box-footer
-        <div class="box-footer"></div>
-        -->
-                    <!-- /.box-footer-->
 
                 </div>
 
@@ -847,8 +841,8 @@
     </div>
 
 
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script src="<%=basePath%>/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<%=basePath%>/plugins/jQueryUI/jquery-ui.min.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
     </script>

@@ -68,7 +68,19 @@ public class EmployeeServiceTest {
         }
     }
 
+    @Test
+    public void testcreateMax(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
+        MemberService memberService = (MemberService) ac.getBean("memberService");
+        System.out.println(memberService.createMax());
+    }
 
+    @Test
+    public void testselectMemberOne(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("application.xml");
+        MemberService memberService = (MemberService) ac.getBean("memberService");
+        System.out.println(memberService.selectOne(111001));
+    }
 
 
 

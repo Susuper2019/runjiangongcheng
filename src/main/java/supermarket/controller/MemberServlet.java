@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,12 +29,19 @@ public class MemberServlet {
 
 //    @ResponseBody
     @RequestMapping(value = "/showHuiyuanMessage")
-    public String ShowHuiyuanMessage(Model model){
-        List<Member> members = memberService.findMembers();
-        System.out.println(members);
-
+    public String ShowHuiyuanMessage(Model model,@RequestParam(value = "m_id", required = false, defaultValue = "0") Integer m_id){
+        List<Member> members = new ArrayList<>();
+        if(m_id==0){
+            members = memberService.findMembers();
+        }else{
+            Member member = memberService.selectOne(m_id);
+            members.add(member);
+        }
+//        model = null;
+//        model.mergeAttributes();
         model.addAttribute("members",members);
         return "huiyuanxinxi";
+
 
 
 //        ModelAndView modelAndView = new ModelAndView("redirect:page/huiyuanxinxi.jsp");
@@ -50,16 +58,6 @@ public class MemberServlet {
     }
 
 
-//    @RequestMapping(value = "/deleteMember")
-//    public String DeleteMember(@RequestParam(value = "id",required = false) String id){
-//        System.out.println("test");
-////        if(){
-//////            model.addAttribute("msg","success");
-////        }
-//        memberService.deleteMember(Integer.parseInt(id));
-//        return "forward:showHuiyuanMessage";
-//    }
-
     @RequestMapping(value = "/updateMember")
     public String UpdateMember(@RequestParam(value = "huiyuanId",required=false) Integer id,@RequestParam(value = "huiyuanjifen",required=false) Integer point,Model model){
         Member member = new Member();
@@ -74,4 +72,28 @@ public class MemberServlet {
         }
         return "forward:showHuiyuanMessage";
     }
+
+    @RequestMapping(value = "/createMember")
+    public String CreateMember(Model model){
+        int i = memberService.createMax();
+        model.addAttribute("m_id",i);
+        System.out.println(i);
+        return "forward:showHuiyuanMessage";
+    }
+
+    @RequestMapping(value = "showMemberOne")
+    public String ShowMemberOne(Model model,@RequestParam(value = "m_id",required = false) Integer e_id){
+        System.out.println(e_id+":eid");
+        Member membertest = memberService.selectOne(e_id);
+        List<Member> members = new ArrayList<>();
+        members.add(membertest);
+        for(Member member:members){
+            System.out.println(member);
+        }
+//        model = null;
+        model.addAttribute("members",members);
+//        return "forward:showHuiyuanMessage";
+        return "huiyuanxinxi";
+    }
 }
+

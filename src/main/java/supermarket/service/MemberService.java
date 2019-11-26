@@ -21,4 +21,9 @@ public interface MemberService {
     boolean updateMember(Member member);
 
     boolean insertMember(Member member);
+
+    //产生最大值的方法
+    int createMax();
+
+    Member selectOne(Integer id);
 }

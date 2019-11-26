@@ -31,24 +31,36 @@ public class LoginServlet   {
 
     @RequestMapping(value = "/loginServlet")
 //    public String loginToPage(HttpServletRequest request, HttpServletResponse response){
-    public ModelAndView loginToPage(@RequestParam("userid") String ids, @RequestParam("password") String pwd, HttpSession session)  {
+    public String loginToPage(@RequestParam("userid") String ids, @RequestParam("password") String pwd, HttpSession session)  {
         int id = Integer.parseInt(ids);
         Employee employee = employeeService.selectLogin(id);
         ModelAndView modelAndView = null;
-        if( employee!=null && employee.getE_password().equals(pwd)){
-            session.setAttribute("USER_SESSION",employee);
-            modelAndView = new ModelAndView("redirect:page/huiyuanxinxi.jsp");
+        if( employee!=null && employee.getE_password().equals(pwd)) {
+            session.setAttribute("USER_SESSION", employee);
+            System.out.println(employee);
+            if (employee.getE_job().equals("人事经理")) {
+                return "redirect:Employee/showEmloyeeServlet";
+            } else if (employee.getE_job().equals("营业员")) {
+                return "redirect:Member/showHuiyuanMessage";
+            } else if (employee.getE_job().equals("库管")) {
+                return "redirect:Product/showProductMessage";
+            }
+        }
+            return "redirect:Product/showIndexMessage";
+
+
+//            modelAndView = new ModelAndView("redirect:page/huiyuanxinxi.jsp");
 //                modelAndView.setViewName();
 
 //            return "redirect:huiyuanxinxi";
 //            response.sendRedirect("page/huiyuanxinxi.jsp");
-        }else{
-            modelAndView = new ModelAndView("redirect:page/login.jsp");
-            modelAndView.addObject("logStatus","登录失败");
-//            return "login";
-//            response.sendRedirect("page/login.jsp");
-        }
-        return  modelAndView;
+//        }else{
+//            modelAndView = new ModelAndView("redirect:page/login.jsp");
+//            modelAndView.addObject("logStatus","登录失败");
+////            return "login";
+////            response.sendRedirect("page/login.jsp");
+//        }
+//        return  modelAndView;
     }
 
 

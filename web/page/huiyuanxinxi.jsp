@@ -269,7 +269,7 @@
                 </a>
                           <ul class="treeview-menu">
                           <li>
-                                <a href="kucunguanli.html">
+                                <a href="ProductManage.jsp">
                             <i class="fa fa-circle-o"></i> 库存数据信息列表 </a>
                             </li>
 							
@@ -356,18 +356,24 @@
                             <div class="pull-left">
                                 <div class="form-group form-inline">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</button>
+                                        <a href="<%=basePath%>/Member/createMember"><button type="button" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</button></a>
                                         <button type="button" class="btn btn-default" title="删除" onclick='confirm("你确认要删除吗？")'><i class="fa fa-trash-o"></i> 删除</button>
-                                        
-                                        <button type="button" class="btn btn-default" title="刷新"><i class="fa fa-refresh"></i> 刷新</button>
+
+                                        <a href="<%=basePath%>/Member/showHuiyuanMessage"><button type="button" class="btn btn-default" title="刷新"><i class="fa fa-refresh"></i> 刷新</button></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="box-tools pull-right">
-                                <div class="has-feedback">
-                                    <input type="text" class="form-control input-sm" placeholder="搜索">
-                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                                </div>
+                                <form name="teste">
+                                    <div class="has-feedback">
+                                        <input type="text" class="form-control input-sm" placeholder="输入会员编号来搜索" name="m_id" id="m_id"></input>
+                                        <%--<input type="submit" value="查询"/>--%>
+                                        <button type="submit" class="btn" onclick="select()"/>
+
+                                        <%--<input type="text" class="form-control input-sm" placeholder="搜索">--%>
+                                        <%--<span class="glyphicon glyphicon-search form-control-feedback"></span>--%>
+                                    </div>
+                                </form>
                             </div>
                             <!--工具栏/-->
 
@@ -416,41 +422,7 @@
                     </div>
                     <!-- /.box-body -->
 
-                    <!-- .box-footer-->
-                    <div class="box-footer">
-                        <div class="pull-left">
-                            <div class="form-group form-inline">
-                                总共2 页，共14 条数据。 每页
-                                <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select> 条
-                            </div>
-                        </div>
 
-                        <div class="box-tools pull-right">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">首页</a>
-                                </li>
-                                <li><a href="#">上一页</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">下一页</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">尾页</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!-- /.box-footer-->
 
 
 
@@ -497,8 +469,8 @@
         <%--</div>--%>
     <%--</div>--%>
 
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script src="<%=basePath%>/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<%=basePath%>/plugins/jQueryUI/jquery-ui.min.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
     </script>
@@ -543,6 +515,30 @@
     <script src="<%=basePath%>/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
     <script src="<%=basePath%>/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
     <script>
+
+        function select(){
+            <%--var m_id = document.getElementById("m_id").value;--%>
+            <%--alert(m_id);--%>
+            <%--$.ajax({--%>
+                <%--url: '<%=basePath%>/Member/showHuiyuanMessage?m_id='+m_id,--%>
+                <%--success: function (data) {--%>
+                    <%--// $("body").html(data);--%>
+                    <%--alert("成功");--%>
+                    <%--// window.location.reload()  //刷新页面--%>
+                <%--},--%>
+                <%--error: function () {--%>
+                    <%--alert("错误");--%>
+                    <%--// window.location.reload()  //刷新页面--%>
+                <%--}--%>
+            <%--})--%>
+
+            alert("select");
+            var m_id = document.getElementById("m_id").value;
+            alert(m_id);
+            document.teste.action="<%=basePath%>/Member/showHuiyuanMessage?m_id="+m_id;
+            document.teste.submit();
+        }
+
         $(document).ready(function() {
             // 选择框
             $(".select2").select2();
@@ -578,7 +574,7 @@
                 success: function (data) {
                     // $("body").html(data);
                     alert("删除成功");
-                    window.location.reload()  //刷新页面
+                    window.location.reload(); //刷新页面
                 },
                 error: function () {
                     alert("错误");

@@ -60,6 +60,6 @@
     </bean>
 
     <!--<bean name="employeeService" class="main.java.supermarket.service.impl.EmployeeServiceImpl"></bean>-->
-
+    <bean class="main.java.supermarket.service.impl.CommodityServiceImpl" name="commodityService"></bean>
 
 </beans>

@@ -17,10 +17,11 @@ public class Commodity {
     private Double c_price;  //商品进价
     private Double c_sellprice;  //商品售价
     private String c_place;   //存储位置
+    private String c_picture;  //图片
 
     @Override
     public String toString() {
-        return "CommodityDao{" +
+        return "Commodity{" +
                 "c_id=" + c_id +
                 ", c_eid=" + c_eid +
                 ", c_name='" + c_name + '\'' +
@@ -30,7 +31,16 @@ public class Commodity {
                 ", c_price=" + c_price +
                 ", c_sellprice=" + c_sellprice +
                 ", c_place='" + c_place + '\'' +
+                ", c_picture='" + c_picture + '\'' +
                 '}';
+    }
+
+    public String getC_picture() {
+        return c_picture;
+    }
+
+    public void setC_picture(String c_picture) {
+        this.c_picture = c_picture;
     }
 
     public Integer getC_id() {

@@ -46,4 +46,18 @@ public class MemberServiceImpl implements MemberService {
     public boolean insertMember(Member member) {
         return memberDao.insertMember(member);
     }
+
+    @Override
+    public int createMax() {
+        int i = memberDao.selectMax();
+        Member member = new Member();
+        member.setM_id(i+1);
+        member.setM_point(0);
+        memberDao.insertMember(member);
+        return i+1;
+    }
+    @Override
+    public Member selectOne(Integer id){
+        return memberDao.selectOne(id);
+    }
 }
